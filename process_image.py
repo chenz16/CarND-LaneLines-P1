@@ -23,7 +23,7 @@ def process_image(image):
     blur_gray = P1.gaussian_blur(gray, kernel_size)
 
     # Define our parameters for Canny and apply
-    low_threshold = 30
+    low_threshold = 25
     high_threshold = 150
     edges = P1.canny(blur_gray, low_threshold, high_threshold)
 
@@ -38,8 +38,8 @@ def process_image(image):
     # Make a blank the same size as our image to draw on
     rho = 1 # distance resolution in pixels of the Hough grid
     theta = np.pi/180 # angular resolution in radians of the Hough grid
-    threshold = 25    # minimum number of votes (intersections in Hough grid cell)
-    min_line_length = 10 #minimum number of pixels making up a line
+    threshold = 20    # minimum number of votes (intersections in Hough grid cell)
+    min_line_length = 50 #minimum number of pixels making up a line
     max_line_gap = 150   # maximum gap in pixels between connectable line segments
     line_image = np.copy(image)*0 # creating a blank to draw lines on
 
